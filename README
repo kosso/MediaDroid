@@ -1,18 +1,18 @@
-Welcome to your Appcelerator Titanium Mobile Project
+A demo Titanium app to use Intents for recording audio or video using the native recording apps.
 
-This is a blank project.  Start by editing your application's app.js to 
-make your first mobile project using Titanium.
+Audio quality is quite poor using the AMR codec at 8000KHz.  but the video recorder can use whichever settings the user
+has decided to use in the recorder settings. 
+
+This demo requires the use of a custom Titanium module, provided in the 'module' folder. THe source code for the module 
+is available in my 'MediaQuery' repository [https://github.com/kosso/Mediaquery]
 
 
+Kosso : http://kosso.co.uk
 
-----------------------------------
-Stuff our legal folk make us say:
+Creative Commons Attribution 3.0 Unported License.
 
-Appcelerator, Appcelerator Titanium and associated marks and logos are 
-trademarks of Appcelerator, Inc. 
+Attribution required
+Commerical use allowed.
+Modification allowed. 
 
-Titanium is Copyright (c) 2009-2010 by Appcelerator, Inc. All Rights Reserved.
-
-Titanium is licensed under the Apache Public License (Version 2). Please
-see the LICENSE file for the full license.
 
