@@ -1,46 +1,90 @@
 // this sets the background color of the master UIView (when there are no windows/tab groups on it)
 Titanium.UI.setBackgroundColor('#000');
 
-// create tab group
-var tabGroup = Titanium.UI.createTabGroup();
+
+//var win = Ti.UI.currentWindow;
+
+var win = Titanium.UI.createWindow({  
+    title:'Video Recorder',
+    backgroundColor:'#eee'
+});
 
 
-//
-// create base UI tab and root window
-//
+
+
+
+var tabBar = Ti.UI.createView({
+	width:320,
+	height:70,
+	//borderWidth:1,
+	//borderColor:theme.border_color,
+	backgroundColor:'#222222',
+	bottom:0
+});
+
+
+var videoButton = Titanium.UI.createButton({
+  top: 0, left: 0, width: 160, height: 70, title: "Record Video", backgroundColor:'#aaa', color:'#222'
+});
+
+var audioButton = Titanium.UI.createButton({
+  top: 0, right: 0, width: 160, height: 70, title: "Record Audio", backgroundColor:'#444', color:'#fff'
+});
+
+
+tabBar.add(videoButton);
+tabBar.add(audioButton);
+
+
+win.add(tabBar);
+
+
 var win1 = Titanium.UI.createWindow({  
-    title:'Video',
-    backgroundColor:'#fff',
+    title:'MediaDroid : Video',
+    top:0,
+    bottom:70,
+    backgroundColor:'#ccc',
     url: 'record_video.js'
 });
-var tab1 = Titanium.UI.createTab({  
-    icon:'KS_nav_views.png',
-    title:'Video Recording',
-    window:win1
-});
 
-//
-// create controls tab and root window
-//
+
 var win2 = Titanium.UI.createWindow({  
-    title:'Audio',
-    backgroundColor:'#111',
+    title:'MediaDroid : Audio',
+    top:0,
+    bottom:70,
+    backgroundColor:'#ccc',
     url: 'record_audio.js'
 });
-var tab2 = Titanium.UI.createTab({  
-    icon:'KS_nav_ui.png',
-    title:'Audio Recording',
-    window:win2
+
+win.open();
+
+var current_win = 1;
+win1.open();
+
+
+videoButton.addEventListener('click', function() {
+	if(current_win == 2){
+		
+		win1.open();
+		win2.close();
+		current_win = 1;
+		videoButton.backgroundColor = '#aaa';
+		videoButton.color = '#222';
+		audioButton.backgroundColor = '#444';
+		audioButton.color = '#fff';
+
+	}
 });
 
-
-
-//
-//  add tabs
-//
-tabGroup.addTab(tab1);  
-tabGroup.addTab(tab2);  
-
-
-// open tab group
-tabGroup.open();
+audioButton.addEventListener('click', function() {
+	if(current_win == 1){
+		win2.open();
+		win1.close();
+		current_win = 2;
+		audioButton.backgroundColor = '#aaa';
+		audioButton.color = '#222';
+		videoButton.backgroundColor = '#444';
+		videoButton.color = '#fff';
+		
+	}
+});

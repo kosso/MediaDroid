@@ -1,12 +1,12 @@
 Logfile initialized
 [INFO] logfile = /Users/kosso/MediaDroid/build.log
-[DEBUG] /Library/Application Support/Titanium/mobilesdk/osx/1.7.2/android/builder.py install "MediaDroid" "/opt/android-sdk" "/Users/kosso/MediaDroid" "com.kosso.mediadroid" "loading..."
+[DEBUG] /Library/Application Support/Titanium/mobilesdk/osx/1.7.2/android/builder.py install "MediaDroid" "/opt/android-sdk" "/Users/kosso/MediaDroid" "com.kosso.mediadroid" "17"
 [INFO] Titanium SDK version: 1.7.2 (07/21/11 09:36 97c3689)
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.009730 seconds on emulator to get ready
-[DEBUG] com.kosso.mediadroid installed? True
+[DEBUG] waited 0.010184 seconds on emulator to get ready
+[DEBUG] com.kosso.mediadroid installed? False
 [INFO] Copying project resources..
 [INFO] Tiapp.xml unchanged, skipping class generation
 [DEBUG] Processing Android resource drawables
@@ -28,10 +28,8 @@ Logfile initialized
 [DEBUG] from resource zip => assets/Resources/app.js
 [DEBUG] from resource zip => assets/Resources/appicon.png
 [DEBUG] from resource zip => assets/Resources/default.png
-[DEBUG] from resource zip => assets/Resources/rec.js
 [DEBUG] from resource zip => assets/Resources/record_audio.js
 [DEBUG] from resource zip => assets/Resources/record_video.js
-[DEBUG] from resource zip => assets/Resources/recvideo.js
 [DEBUG] from resource zip => assets/tiapp.xml
 [DEBUG] from resource zip => res/drawable/appicon.png
 [DEBUG] from resource zip => res/drawable/background.png
@@ -72,6 +70,6 @@ Logfile initialized
 [DEBUG] Waiting for device to be ready ...
 [TRACE] adb devices returned 1 devices/emulators
 [DEBUG] Device connected... (waited 0 seconds)
-[DEBUG] waited 0.010254 seconds on emulator to get ready
+[DEBUG] waited 0.010333 seconds on emulator to get ready
 [INFO] Installing application on emulator
 [INFO] Application installed. Launch from drawer on Home Screen

@@ -1,19 +1,20 @@
 var win = Ti.UI.currentWindow;
 
 
+
 // const value grabbed from
 // http://developer.android.com/reference/android/provider/MediaStore.Audio.Media.html#RECORD_SOUND_ACTION
 var RECORD_VIDEO_ACTION = "android.media.action.VIDEO_CAPTURE";
 var videoUri = null; // Will be set as a result of recording action.
 
 var recordButton = Titanium.UI.createButton({
-  top: 10, left: 10, right: 10, height: 35, title: "Record Video"
+  top: 10, left: 10, right: 10, height: 50, title: "Record Video"
 });
 var labelResultCaption = Titanium.UI.createLabel({
   top: 50, left: 10, right: 10, height: 35, visible: false, color: 'yellow'
 });
 var labelResult = Titanium.UI.createLabel({
-  top: 90, left: 10, right: 10, height: 100, visible: false,
+  top: 100, left: 10, right: 10, height: 100, visible: false,
   backgroundColor: 'white', color: 'black',
   verticalAlign: 'top'
 });
@@ -25,6 +26,7 @@ var sendButton = Titanium.UI.createButton({
   title: "Share Recorded Audio", visible: false
 });
 */
+
 
 win.add(recordButton);
 win.add(labelResultCaption);

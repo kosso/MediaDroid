@@ -7,13 +7,13 @@ var RECORD_SOUND_ACTION = "android.provider.MediaStore.RECORD_SOUND";
 var soundUri = null; // Will be set as a result of recording action.
 
 var recordButton = Titanium.UI.createButton({
-  top: 10, left: 10, right: 10, height: 35, title: "Record Audio"
+  top: 10, left: 10, right: 10, height: 50, title: "Record Audio"
 });
 var labelResultCaption = Titanium.UI.createLabel({
   top: 50, left: 10, right: 10, height: 35, visible: false, color: 'yellow'
 });
 var labelResult = Titanium.UI.createLabel({
-  top: 90, left: 10, right: 10, height: 100, visible: false,
+  top: 100, left: 10, right: 10, height: 100, visible: false,
   backgroundColor: 'white', color: 'black',
   verticalAlign: 'top'
 });
