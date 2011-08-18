@@ -93,7 +93,7 @@ recordButton.addEventListener('click', function() {
        It appears that it is also possible to save the returned soundUri without the module using something like this:
        
 	var source = Ti.Filesystem.getFile(videoUri);
-	var target = Ti.Filesystem.getFile('appdata://recording.amr');
+	var target = Ti.Filesystem.getFile('appdata://recording.3gp'); // or whatever your device format is: might be mp4 or m4v depending on version.
 	// note: source.exists() will return false, because this is a URI into the MediaStore.
 	source.copy(target.nativePath);
        
