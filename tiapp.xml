@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+    <id>com.kosso.mediadroid</id>
+    <name>MediaDroid</name>
+    <version>1.0</version>
+    <publisher>kosso</publisher>
+    <url>http://kosso.co.uk</url>
+    <description>not specified</description>
+    <copyright>Kosso</copyright>
+    <icon>appicon.png</icon>
+    <persistent-wifi>false</persistent-wifi>
+    <prerendered-icon>false</prerendered-icon>
+    <statusbar-style>default</statusbar-style>
+    <statusbar-hidden>false</statusbar-hidden>
+    <fullscreen>false</fullscreen>
+    <navbar-hidden>false</navbar-hidden>
+    <analytics>false</analytics>
+	<guid>32f7311c-f4c1-4574-ba03-12f593c5d1d8</guid>
+	<iphone>
+		<orientations device="iphone">
+			<orientation>Ti.UI.PORTRAIT</orientation>
+		</orientations>
+		<orientations device="ipad">
+			<orientation>Ti.UI.PORTRAIT</orientation>
+			<orientation>Ti.UI.UPSIDE_PORTRAIT</orientation>
+			<orientation>Ti.UI.LANDSCAPE_LEFT</orientation>
+			<orientation>Ti.UI.LANDSCAPE_RIGHT</orientation>
+		</orientations>
+	</iphone>	
+	<android xmlns:android="http://schemas.android.com/apk/res/android">
+		<manifest>
+			<supports-screens android:anyDensity="false"/>
+		</manifest>
+	</android>
+	<modules>
+		<module platform="android" version="0.1">com.kosso.mediaquery</module>
+	</modules>
+</ti:app>
