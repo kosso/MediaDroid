@@ -35,9 +35,9 @@ win.add(labelResult);
 sendButton.addEventListener('click', function(){
   var intent = Titanium.Android.createIntent({
     action: Titanium.Android.ACTION_SEND,
-    type: 'audio/amr'
+    type: 'application/octet-stream'
   });
-  intent.putExtraUri(Titanium.Android.EXTRA_STREAM, soundUri);
+  intent.putExtraUri(Titanium.Android.EXTRA_STREAM, videoUri);
   Titanium.Android.currentActivity.startActivity(intent);
 });
 */
