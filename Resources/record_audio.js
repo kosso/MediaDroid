@@ -66,14 +66,14 @@ recordButton.addEventListener('click', function() {
 
         var pathQuery = require('com.kosso.mediaquery');
 
-		// Testing the proxy 
-		pathQuery.createExample({message: "hello world  ##############"});
+	// Testing the proxy 
+	pathQuery.createExample({message: "hello world  ##############"});
 		
         Ti.API.info('>>>>>>>>>>>>>>>>>>>>>> QUERY NOW <<<<<<<<<<<<<<<<<<<<<<<');
 
         var thePath = pathQuery.getAudioPath(contentId);
 		
-		Ti.API.info('>> THE PATH IS : '+thePath);
+	Ti.API.info('>> THE PATH IS : '+thePath);
 		
         Ti.API.info('>>>>>>>>>>>>>>>>>>>>>> QUERY END <<<<<<<<<<<<<<<<<<<<<<<');
 
@@ -86,6 +86,15 @@ recordButton.addEventListener('click', function() {
        
        // Ti.API.info('>>>>>>>>>>>  theFile : '+theFile); 
        
+       /*
+       It appears that it is also possible to save the returned soundUri without the module using something like this:
+       
+           var source = Ti.Filesystem.getFile(soundUri);
+	   var target = Ti.Filesystem.getFile('appdata://recording.amr');
+	   // note: source.exists() will return false, because this is a URI into the MediaStore.
+	   source.copy(target.nativePath);
+       
+       */
        
        
         
