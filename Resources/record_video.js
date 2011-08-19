@@ -59,24 +59,24 @@ recordButton.addEventListener('click', function() {
       
        	Ti.API.debug('###############RESULT_OK######## e : '+e);
       
-        soundUri = e.intent.data;
+        videoUri = e.intent.data;
 
-		var contentId = soundUri.split('/');
+	var contentId = videoUri.split('/');
 		
-		contentId = contentId.pop();
+	contentId = contentId.pop();
 		
         Ti.API.info('>>>>>>>>>>>>>>>>>>>>>> '+typeof soundUri+' <<<<<<<<<<<<<<<<<<<<<<<');
 
         var pathQuery = require('com.kosso.mediaquery');
 
-		// Testing the proxy 
-		pathQuery.createExample({message: "hello world  ##############"});
+	// Testing the proxy 
+	pathQuery.createExample({message: "hello world  ##############"});
 		
         Ti.API.info('>>>>>>>>>>>>>>>>>>>>>> QUERY NOW <<<<<<<<<<<<<<<<<<<<<<<');
 
         var thePath = pathQuery.getVideoPath(contentId);
 		
-		Ti.API.info('>> THE PATH IS : '+thePath);
+	Ti.API.info('>> THE VIDEO PATH IS : '+thePath);
 		
         Ti.API.info('>>>>>>>>>>>>>>>>>>>>>> QUERY END <<<<<<<<<<<<<<<<<<<<<<<');
 
@@ -89,26 +89,30 @@ recordButton.addEventListener('click', function() {
        
        // Ti.API.info('>>>>>>>>>>>  theFile : '+theFile); 
        
+       /*
+       It appears that it is also possible to save the returned soundUri without the module using something like this:
        
+	var source = Ti.Filesystem.getFile(videoUri);
+	var target = Ti.Filesystem.getFile('appdata://recording.amr');
+	// note: source.exists() will return false, because this is a URI into the MediaStore.
+	source.copy(target.nativePath);
+       
+       */       
        
         
         Ti.API.info('>>>>>>>>>>>  recording : '+recording); 
 
-		Ti.API.info('file size = ' + recording.size + ' bytes');
+	Ti.API.info('file size = ' + recording.size + ' bytes');
 
         Ti.API.info('>>>>>>>>>>>  file exists : '+recording.exists()); 
         
         Ti.API.info('>>>>>>>>>>>  file nativePath : '+recording.nativePath);
-        
-     //   var moveFile = recording.move(Ti.Filesystem.applicationDataDirectory + '/' + fileName);
-        
+            
         
         Ti.API.info('>>>>>>>>>>>>  applicationDataDirectory = '+Ti.Filesystem.applicationDataDirectory);
         
-       // Ti.API.info('>>>>>>>>> file move result : '+moveFile);
-        
-        labelResultCaption.text = 'Audio Captured. Content URI:';
-        labelResult.text = soundUri + '\n\n' + thePath;
+        labelResultCaption.text = 'Video Captured. Content URI:';
+        labelResult.text = videoUri + '\n\n' + thePath;
         
         labelResultCaption.visible = true;
         labelResult.visible = true;
